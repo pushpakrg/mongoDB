@@ -1,0 +1,5 @@
+GET INDEXES - db.projects.getIndexes()
+
+CREATE INDEX - db.projects.createIndex({ name: "text", "owners.name" :"text"})
+
+DROP INDEX - db.projects.dropIndex("name_text_owners.name_text")
