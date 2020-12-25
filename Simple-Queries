@@ -1,0 +1,9 @@
+db.colln1.insertMany([{},{},{},...])
+db.colln1.count({field: "value"})
+db.colln1.distinct("field")
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+db.getCollection('rclAssessmentQuestionnaire').update({},{"$set":{"additionalComment":""}},{multi: true})
+db.getCollection('rclAssessmentQuestionnaire').update({},{"$unset":{"additionalComment":1}},false,true)
+db.getCollection('rclAssessmentQuestionnaire').update({"questionNumber": 20},{"$unset":{"notes":1}},false,true)
+db.getCollection('rclAssessmentQuestionnaire').updateMany({"comment":{$exists:false}},{"$set":{"reviewComment":[{"text" : ""}]}},{multi: true})
+db.getCollection('rclAssessmentQuestionnaire').updateMany({"questionNumber":{$ne:4}},{"$set":{"reviewComment":[{"text" : ""}]}},{multi: true})
