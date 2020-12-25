@@ -1,0 +1,18 @@
+db.colln.aggregate([
+  {
+    $match: {
+      field: "value" | field: { $in: ["value1", "value2"] }
+    }
+  },
+  {
+    $group: {
+      field1: "field",
+      field2: {
+        $sum: "field"
+       }
+    }
+  },
+  {
+    $sort: { field: -1 } // Descending order
+  }
+])
